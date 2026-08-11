@@ -1,0 +1,914 @@
+/* ==========================================
+   Modal Overlay
+========================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    /* Prevent page scrolling behind modal */
+    overflow-y: auto;
+
+    /* Mobile browser support */
+    padding: 15px;
+
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   Modal Box
+========================================== */
+
+.modal-box {
+    width: 500px;
+    max-width: 100%;
+
+    max-height: calc(100vh - 30px);
+    max-height: calc(100dvh - 30px);
+
+    background: #ffffff;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    animation: popup 0.3s ease;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+
+    box-sizing: border-box;
+
+    overflow-y: auto;
+
+    /* Prevent long text from breaking the modal */
+    overflow-wrap: break-word;
+}
+
+/* ==========================================
+   Modal Heading
+========================================== */
+
+.modal-box h2 {
+    color: #004b8d;
+
+    text-align: center;
+
+    margin-bottom: 15px;
+
+    overflow-wrap: break-word;
+}
+
+/* ==========================================
+   Horizontal Line
+========================================== */
+
+.modal-box hr {
+    margin-bottom: 20px;
+}
+
+/* ==========================================
+   Paragraph
+========================================== */
+
+.modal-box p {
+    font-size: 18px;
+
+    margin: 10px 0;
+
+    line-height: 1.5;
+
+    overflow-wrap: break-word;
+}
+
+/* ==========================================
+   Sub Heading
+========================================== */
+
+.modal-box h3 {
+    margin-top: 20px;
+
+    color: #004b8d;
+
+    overflow-wrap: break-word;
+}
+
+/* ==========================================
+   List
+========================================== */
+
+.modal-box ul {
+    margin-left: 25px;
+
+    margin-top: 10px;
+
+    padding-right: 5px;
+}
+
+/* ==========================================
+   List Items
+========================================== */
+
+.modal-box li {
+    margin: 8px 0;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    overflow-wrap: break-word;
+}
+
+/* ==========================================
+   Close Button
+========================================== */
+
+.close-btn {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #02225b;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    /* Better touch support */
+    min-height: 48px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* ==========================================
+   Close Button Hover
+========================================== */
+
+.close-btn:hover {
+    background: #b02a37;
+}
+
+/* ==========================================
+   Close Button Touch / Active
+========================================== */
+
+.close-btn:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================
+   Popup Animation
+========================================== */
+
+@keyframes popup {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ==========================================
+   Extra Small Phones
+   320px - 374px
+========================================== */
+
+@media (max-width: 374px) {
+
+    .modal-overlay {
+        padding: 10px;
+        align-items: center;
+    }
+
+    .modal-box {
+        width: 100%;
+        max-width: 100%;
+
+        max-height: calc(100vh - 20px);
+        max-height: calc(100dvh - 20px);
+
+        padding: 16px;
+
+        border-radius: 12px;
+    }
+
+    .modal-box h2 {
+        font-size: 19px;
+
+        margin-bottom: 12px;
+    }
+
+    .modal-box hr {
+        margin-bottom: 15px;
+    }
+
+    .modal-box p {
+        font-size: 14px;
+
+        margin: 8px 0;
+
+        line-height: 1.45;
+    }
+
+    .modal-box h3 {
+        font-size: 16px;
+
+        margin-top: 15px;
+    }
+
+    .modal-box ul {
+        margin-left: 18px;
+
+        padding-left: 5px;
+
+        margin-top: 8px;
+    }
+
+    .modal-box li {
+        font-size: 14px;
+
+        margin: 6px 0;
+
+        line-height: 1.4;
+    }
+
+    .close-btn {
+        margin-top: 20px;
+
+        padding: 12px;
+
+        font-size: 16px;
+
+        min-height: 46px;
+    }
+}
+
+/* ==========================================
+   Normal Phones
+   375px - 479px
+========================================== */
+
+@media (min-width: 375px) and (max-width: 479px) {
+
+    .modal-overlay {
+        padding: 12px;
+    }
+
+    .modal-box {
+        width: 100%;
+        max-width: 100%;
+
+        max-height: calc(100vh - 24px);
+        max-height: calc(100dvh - 24px);
+
+        padding: 20px;
+
+        border-radius: 13px;
+    }
+
+    .modal-box h2 {
+        font-size: 21px;
+    }
+
+    .modal-box p {
+        font-size: 15px;
+
+        line-height: 1.5;
+    }
+
+    .modal-box h3 {
+        font-size: 17px;
+    }
+
+    .modal-box li {
+        font-size: 15px;
+
+        line-height: 1.45;
+    }
+
+    .close-btn {
+        margin-top: 24px;
+
+        padding: 13px;
+
+        font-size: 17px;
+    }
+}
+
+/* ==========================================
+   Large Phones
+   480px - 767px
+========================================== */
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+    .modal-overlay {
+        padding: 15px;
+    }
+
+    .modal-box {
+        width: 90%;
+
+        max-width: 500px;
+
+        padding: 24px;
+
+        max-height: calc(100vh - 30px);
+        max-height: calc(100dvh - 30px);
+    }
+
+    .modal-box h2 {
+        font-size: 22px;
+    }
+
+    .modal-box p {
+        font-size: 16px;
+    }
+
+    .modal-box li {
+        font-size: 16px;
+    }
+
+    .close-btn {
+        font-size: 18px;
+    }
+}
+
+/* ==========================================
+   Tablets / iPad Portrait
+   768px - 1023px
+========================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .modal-overlay {
+        padding: 20px;
+    }
+
+    .modal-box {
+        width: 500px;
+
+        max-width: 90%;
+
+        padding: 28px;
+
+        max-height: calc(100vh - 40px);
+        max-height: calc(100dvh - 40px);
+    }
+
+    .modal-box p {
+        font-size: 17px;
+    }
+
+    .modal-box li {
+        font-size: 16px;
+    }
+}
+
+/* ==========================================
+   iPad / Tablet Landscape
+   1024px - 1279px
+========================================== */
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+    .modal-box {
+        width: 500px;
+
+        max-width: 90%;
+
+        padding: 30px;
+    }
+}
+
+/* ==========================================
+   Desktop
+   1280px+
+========================================== */
+
+@media (min-width: 1280px) {
+
+    .modal-box {
+        width: 500px;
+
+        padding: 30px;
+    }
+}
+
+/* ==========================================
+   Landscape Phones
+========================================== */
+
+@media (max-width: 767px) and (orientation: landscape) {
+
+    .modal-overlay {
+        align-items: flex-start;
+
+        padding: 10px;
+    }
+
+    .modal-box {
+        margin: auto;
+
+        max-height: calc(100vh - 20px);
+        max-height: calc(100dvh - 20px);
+
+        padding: 18px;
+    }
+
+    .modal-box h2 {
+        margin-bottom: 10px;
+    }
+
+    .modal-box h3 {
+        margin-top: 12px;
+    }
+
+    .modal-box p {
+        margin: 6px 0;
+    }
+
+    .modal-box li {
+        margin: 5px 0;
+    }
+
+    .close-btn {
+        margin-top: 18px;
+        padding: 11px;
+    }
+}
+
+/* ==========================================
+   Touch Devices
+========================================== */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .close-btn {
+        min-height: 48px;
+
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .close-btn:hover {
+        /* Keep original background on touch devices */
+        background: #02225b;
+    }
+}
+
+/* ==========================================
+   Reduced Motion Accessibility
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .modal-box {
+        animation: none;
+    }
+
+    .close-btn {
+        transition: none;
+    }
+}
+/* =========================================================
+   COMPANY PROFILE - GLASS / WATER EFFECT
+========================================================= */
+
+.modal-box {
+    position: relative;
+
+    /*
+     * Transparent glass
+     */
+    background: rgba(255, 255, 255, 0.18);
+
+    /*
+     * Glass blur
+     */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    /*
+     * Glass border
+     */
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    /*
+     * Glass shadow
+     */
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.45);
+
+    /*
+     * Required for wave layers
+     */
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   FIRST WATER WAVE
+========================================================= */
+
+.modal-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -35%;
+
+    bottom: -55%;
+
+    width: 170%;
+
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(255, 255, 255, 0.28) 0%,
+            rgba(255, 255, 255, 0.14) 35%,
+            rgba(255, 255, 255, 0.05) 60%,
+            transparent 75%
+        );
+
+    border-radius: 48% 52% 0 0;
+
+    transform-origin: center bottom;
+
+    animation:
+        companyWaterWave 5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   SECOND WATER WAVE
+========================================================= */
+
+.modal-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -45%;
+
+    bottom: -60%;
+
+    width: 190%;
+
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: -2;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(13, 110, 253, 0.16) 0%,
+            rgba(59, 130, 246, 0.10) 35%,
+            transparent 70%
+        );
+
+    border-radius: 55% 45% 0 0;
+
+    transform-origin: center bottom;
+
+    animation:
+        companyWaterWaveReverse 7s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   WATER WAVE 1 ANIMATION
+========================================================= */
+
+@keyframes companyWaterWave {
+
+    0% {
+        transform:
+            translateX(-5%)
+            rotate(-2deg)
+            scaleY(0.95);
+    }
+
+    25% {
+        transform:
+            translateX(4%)
+            rotate(2deg)
+            scaleY(1.02);
+    }
+
+    50% {
+        transform:
+            translateX(-2%)
+            rotate(-1deg)
+            scaleY(0.98);
+    }
+
+    75% {
+        transform:
+            translateX(5%)
+            rotate(2deg)
+            scaleY(1.04);
+    }
+
+    100% {
+        transform:
+            translateX(-5%)
+            rotate(-2deg)
+            scaleY(0.95);
+    }
+}
+
+
+/* =========================================================
+   WATER WAVE 2 ANIMATION
+========================================================= */
+
+@keyframes companyWaterWaveReverse {
+
+    0% {
+        transform:
+            translateX(5%)
+            rotate(2deg)
+            scaleY(1);
+    }
+
+    25% {
+        transform:
+            translateX(-4%)
+            rotate(-2deg)
+            scaleY(0.96);
+    }
+
+    50% {
+        transform:
+            translateX(3%)
+            rotate(1deg)
+            scaleY(1.04);
+    }
+
+    75% {
+        transform:
+            translateX(-5%)
+            rotate(-2deg)
+            scaleY(0.98);
+    }
+
+    100% {
+        transform:
+            translateX(5%)
+            rotate(2deg)
+            scaleY(1);
+    }
+}
+
+
+/* =========================================================
+   CONTENT ABOVE WATER
+========================================================= */
+
+.modal-box > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================================
+   GLASS LIGHT REFLECTION
+========================================================= */
+
+.modal-box h2 {
+    position: relative;
+    z-index: 3;
+}
+
+
+/* Moving reflection */
+
+.modal-box h2::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -25%;
+
+    top: 50%;
+
+    width: 150%;
+
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.65),
+        transparent
+    );
+
+    opacity: 0.45;
+
+    pointer-events: none;
+
+    animation:
+        companyGlassReflection 4.5s ease-in-out infinite;
+}
+
+
+@keyframes companyGlassReflection {
+
+    0% {
+        transform: translateX(-30%);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: translateX(25%);
+        opacity: 0.65;
+    }
+
+    70% {
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: translateX(55%);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   CLOSE BUTTON GLASS SHINE
+========================================================= */
+
+.close-btn {
+    position: relative;
+
+    overflow: hidden;
+
+    z-index: 3;
+}
+
+
+.close-btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -120%;
+
+    width: 70%;
+
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.30),
+        transparent
+    );
+
+    transform: skewX(-20deg);
+
+    pointer-events: none;
+
+    animation:
+        companyButtonShine 4s ease-in-out infinite;
+}
+
+
+@keyframes companyButtonShine {
+
+    0% {
+        left: -120%;
+    }
+
+    45% {
+        left: -120%;
+    }
+
+    65% {
+        left: 130%;
+    }
+
+    100% {
+        left: 130%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE GLASS
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .modal-box {
+
+        background: rgba(255, 255, 255, 0.20);
+
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+
+        box-shadow:
+            0 12px 30px rgba(0, 0, 0, 0.22),
+            inset 0 1px 1px rgba(255, 255, 255, 0.40);
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .modal-box {
+        animation: none;
+    }
+
+    .modal-box::before,
+    .modal-box::after,
+    .modal-box h2::after,
+    .close-btn::before {
+        animation: none;
+    }
+
+}
+/* =========================================================
+   COMPANY PROFILE - WHITE TEXT
+========================================================= */
+
+.modal-box {
+    color: #ffffff;
+}
+
+.modal-box h2,
+.modal-box h3 {
+    color: #ffffff;
+}
+
+.modal-box p,
+.modal-box li {
+    color: #eaf4ff;
+}
+
+.modal-box strong {
+    color: #ffffff;
+}
+
+.modal-box hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.close-btn {
+    color: #ffffff;
+}

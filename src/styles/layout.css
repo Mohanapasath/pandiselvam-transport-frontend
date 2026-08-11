@@ -1,0 +1,698 @@
+/* ===========================================
+   GLOBAL BOX SIZING
+=========================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* ===========================================
+   MAIN LAYOUT
+=========================================== */
+
+.layout {
+    width: 100%;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    background: #f5f7fb;
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow-x: hidden;
+}
+
+/* ===========================================
+   MAIN CONTENT
+=========================================== */
+
+.main-content {
+    flex: 1;
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: 30px auto;
+
+    padding: 0 20px;
+
+    box-sizing: border-box;
+}
+
+/* ===========================================
+   CONTAINER
+=========================================== */
+
+.container {
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+/* ===========================================
+   CARD
+=========================================== */
+
+.card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+/* ===========================================
+   FLEX
+=========================================== */
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+/* ===========================================
+   GRID
+=========================================== */
+
+.grid {
+    display: grid;
+
+    width: 100%;
+}
+
+/* ===========================================
+   GRID 2
+=========================================== */
+
+.grid-2 {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+/* ===========================================
+   GRID 3
+=========================================== */
+
+.grid-3 {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+/* ===========================================
+   GRID 4
+=========================================== */
+
+.grid-4 {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+
+    width: 100%;
+}
+
+/* ===========================================
+   WIDTH
+=========================================== */
+
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+/* ===========================================
+   MARGIN
+=========================================== */
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+/* ===========================================
+   PADDING
+=========================================== */
+
+.p-10 {
+    padding: 10px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.p-30 {
+    padding: 30px;
+}
+
+/* ===========================================
+   TEXT
+=========================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+/* ===========================================
+   BACKGROUND
+=========================================== */
+
+.bg-white {
+    background: #ffffff;
+}
+
+.bg-light {
+    background: #f8fafc;
+}
+
+/* ===========================================
+   SHADOW
+=========================================== */
+
+.shadow {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* ===========================================
+   BORDER RADIUS
+=========================================== */
+
+.rounded {
+    border-radius: 10px;
+}
+
+.rounded-lg {
+    border-radius: 15px;
+}
+
+/* ===========================================
+   LARGE DESKTOP
+   1536px+
+=========================================== */
+
+@media (min-width: 1536px) {
+
+    .main-content {
+        max-width: 1500px;
+
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .grid-2 {
+        gap: 25px;
+    }
+
+    .grid-3 {
+        gap: 25px;
+    }
+
+    .grid-4 {
+        gap: 25px;
+    }
+}
+
+/* ===========================================
+   DESKTOP / LAPTOP
+   1200px - 1535px
+=========================================== */
+
+@media (min-width: 1200px) and (max-width: 1535px) {
+
+    .main-content {
+        max-width: 1400px;
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* ===========================================
+   TABLET LANDSCAPE / SMALL LAPTOP
+   993px - 1199px
+=========================================== */
+
+@media (min-width: 993px) and (max-width: 1199px) {
+
+    .main-content {
+        width: 100%;
+
+        margin: 25px auto;
+
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+    .grid-2 {
+        gap: 18px;
+    }
+}
+
+/* ===========================================
+   TABLET / iPAD
+   768px - 992px
+=========================================== */
+
+@media (min-width: 768px) and (max-width: 992px) {
+
+    .main-content {
+        width: 100%;
+
+        margin: 20px auto;
+
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 15px;
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 15px;
+    }
+
+    .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 15px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .w-50 {
+        width: 100%;
+    }
+
+    .p-30 {
+        padding: 25px;
+    }
+}
+
+/* ===========================================
+   LARGE MOBILE
+   480px - 767px
+=========================================== */
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+    .main-content {
+        width: 100%;
+
+        margin: 18px auto;
+
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .grid-4 {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .grid-3 {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .card {
+        padding: 16px;
+
+        border-radius: 10px;
+    }
+
+    .w-50 {
+        width: 100%;
+    }
+
+    .p-30 {
+        padding: 20px;
+    }
+
+    .p-20 {
+        padding: 16px;
+    }
+
+    .flex-wrap {
+        gap: 10px;
+    }
+}
+
+/* ===========================================
+   NORMAL MOBILE
+   375px - 479px
+=========================================== */
+
+@media (min-width: 375px) and (max-width: 479px) {
+
+    .main-content {
+        width: 100%;
+
+        margin: 15px auto;
+
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .grid-4,
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+    .card {
+        padding: 15px;
+
+        border-radius: 10px;
+    }
+
+    .w-50 {
+        width: 100%;
+    }
+
+    .p-30 {
+        padding: 18px;
+    }
+
+    .p-20 {
+        padding: 15px;
+    }
+
+    .p-10 {
+        padding: 9px;
+    }
+
+    .mt-40 {
+        margin-top: 25px;
+    }
+
+    .mt-30 {
+        margin-top: 20px;
+    }
+
+    .mb-30 {
+        margin-bottom: 20px;
+    }
+}
+
+/* ===========================================
+   SMALL MOBILE
+   320px - 374px
+=========================================== */
+
+@media (max-width: 374px) {
+
+    .main-content {
+        width: 100%;
+
+        margin: 12px auto;
+
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .grid-4,
+    .grid-3,
+    .grid-2 {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .card {
+        padding: 12px;
+
+        border-radius: 9px;
+    }
+
+    .w-50 {
+        width: 100%;
+    }
+
+    .p-30 {
+        padding: 15px;
+    }
+
+    .p-20 {
+        padding: 12px;
+    }
+
+    .p-10 {
+        padding: 8px;
+    }
+
+    .mt-40 {
+        margin-top: 20px;
+    }
+
+    .mt-30 {
+        margin-top: 18px;
+    }
+
+    .mt-20 {
+        margin-top: 15px;
+    }
+
+    .mb-30 {
+        margin-bottom: 18px;
+    }
+
+    .mb-20 {
+        margin-bottom: 15px;
+    }
+}
+
+/* ===========================================
+   MOBILE LANDSCAPE
+=========================================== */
+
+@media (max-width: 767px) and (orientation: landscape) {
+
+    .main-content {
+        margin: 15px auto;
+
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .card {
+        padding: 14px;
+    }
+}
+
+/* ===========================================
+   VERY SMALL HEIGHT SCREENS
+=========================================== */
+
+@media (max-height: 600px) {
+
+    .main-content {
+        margin-top: 15px;
+
+        margin-bottom: 15px;
+    }
+
+    .card {
+        padding-top: 15px;
+
+        padding-bottom: 15px;
+    }
+}
+
+/* ===========================================
+   TOUCH DEVICES
+=========================================== */
+
+@media (hover: none) and (pointer: coarse) {
+
+    /*
+       Prevent accidental horizontal overflow
+       on touch devices.
+    */
+
+    .layout,
+    .main-content,
+    .container {
+        max-width: 100%;
+    }
+}
+
+/* ===========================================
+   REDUCED MOTION
+=========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* ===========================================
+   PRINT
+=========================================== */
+
+@media print {
+
+    .layout {
+        min-height: auto;
+
+        background: #ffffff;
+    }
+
+    .main-content {
+        max-width: none;
+
+        margin: 0;
+
+        padding: 0;
+    }
+
+    .card {
+        box-shadow: none;
+
+        border-radius: 0;
+    }
+}

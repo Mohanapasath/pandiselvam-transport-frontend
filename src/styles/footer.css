@@ -1,0 +1,416 @@
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer {
+    width: 100%;
+
+    background: #003b73;
+
+    color: #fff;
+
+    text-align: center;
+
+    padding: 0px 20px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+/* ==========================================
+   FOOTER TITLE
+========================================== */
+
+.footer-title {
+    font-size: 25px;
+
+    margin-bottom: 15px;
+
+    font-weight: bold;
+
+    overflow-wrap: break-word;
+
+    word-break: break-word;
+}
+
+/* ==========================================
+   FOOTER ADDRESS
+========================================== */
+
+.footer-address {
+    font-size: 20px;
+
+    margin-bottom: 15px;
+
+    overflow-wrap: break-word;
+
+    word-break: break-word;
+
+    line-height: 1.5;
+}
+
+/* ==========================================
+   FOOTER PHONE
+========================================== */
+
+.footer-phone {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 15px;
+
+    font-size: 20px;
+
+    overflow-wrap: break-word;
+}
+
+/* ==========================================
+   FOOTER WHATSAPP
+========================================== */
+
+.footer-whatsapp {
+    font-size: 20px;
+
+    margin-bottom: 15px;
+
+    overflow-wrap: break-word;
+}
+
+.footer-whatsapp a {
+    color: #25D366;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    overflow-wrap: break-word;
+
+    word-break: break-word;
+}
+
+.footer-whatsapp a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   FOOTER COPYRIGHT
+========================================== */
+
+.footer-copy {
+    font-size: 15px;
+
+    color: #ddd;
+
+    overflow-wrap: break-word;
+
+    line-height: 1.5;
+}
+
+/* ==========================================
+   LARGE DESKTOP
+   1536px+
+========================================== */
+
+@media (min-width: 1536px) {
+
+    .footer {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .footer-title {
+        font-size: 25px;
+    }
+
+    .footer-address {
+        font-size: 20px;
+    }
+
+    .footer-phone {
+        font-size: 20px;
+    }
+
+    .footer-whatsapp {
+        font-size: 20px;
+    }
+
+    .footer-copy {
+        font-size: 15px;
+    }
+}
+
+/* ==========================================
+   LAPTOP / DESKTOP
+   1024px - 1535px
+========================================== */
+
+@media (min-width: 1024px) and (max-width: 1535px) {
+
+    .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+/* ==========================================
+   TABLET / iPAD
+   768px - 1023px
+========================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .footer {
+        padding: 25px 20px;
+    }
+
+    .footer-title {
+        font-size: 22px;
+
+        margin-bottom: 13px;
+    }
+
+    .footer-address {
+        font-size: 18px;
+
+        margin-bottom: 13px;
+    }
+
+    .footer-phone {
+        gap: 12px;
+
+        font-size: 18px;
+
+        margin-bottom: 13px;
+    }
+
+    .footer-whatsapp {
+        font-size: 18px;
+
+        margin-bottom: 13px;
+    }
+
+    .footer-copy {
+        font-size: 14px;
+    }
+}
+
+/* ==========================================
+   LARGE PHONES
+   480px - 767px
+========================================== */
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+    .footer {
+        padding: 25px 18px;
+    }
+
+    .footer-title {
+        font-size: 19px;
+
+        margin-bottom: 12px;
+    }
+
+    .footer-address {
+        font-size: 16px;
+
+        margin-bottom: 12px;
+
+        line-height: 1.5;
+    }
+
+    .footer-phone {
+        flex-direction: column;
+
+        gap: 7px;
+
+        font-size: 16px;
+
+        margin-bottom: 12px;
+    }
+
+    .footer-whatsapp {
+        font-size: 16px;
+
+        margin-bottom: 12px;
+    }
+
+    .footer-copy {
+        font-size: 13px;
+
+        line-height: 1.5;
+    }
+}
+
+/* ==========================================
+   NORMAL PHONES
+   375px - 479px
+========================================== */
+
+@media (min-width: 375px) and (max-width: 479px) {
+
+    .footer {
+        padding: 22px 15px;
+    }
+
+    .footer-title {
+        font-size: 17px;
+
+        margin-bottom: 11px;
+    }
+
+    .footer-address {
+        font-size: 15px;
+
+        margin-bottom: 11px;
+
+        line-height: 1.45;
+    }
+
+    .footer-phone {
+        flex-direction: column;
+
+        gap: 6px;
+
+        font-size: 15px;
+
+        margin-bottom: 11px;
+    }
+
+    .footer-whatsapp {
+        font-size: 15px;
+
+        margin-bottom: 11px;
+    }
+
+    .footer-copy {
+        font-size: 12px;
+
+        line-height: 1.45;
+    }
+}
+
+/* ==========================================
+   EXTRA SMALL PHONES
+   320px - 374px
+========================================== */
+
+@media (max-width: 374px) {
+
+    .footer {
+        padding: 20px 10px;
+    }
+
+    .footer-title {
+        font-size: 16px;
+
+        margin-bottom: 10px;
+    }
+
+    .footer-address {
+        font-size: 13px;
+
+        margin-bottom: 10px;
+
+        line-height: 1.4;
+    }
+
+    .footer-phone {
+        flex-direction: column;
+
+        gap: 5px;
+
+        font-size: 13px;
+
+        margin-bottom: 10px;
+    }
+
+    .footer-whatsapp {
+        font-size: 13px;
+
+        margin-bottom: 10px;
+    }
+
+    .footer-copy {
+        font-size: 11px;
+
+        line-height: 1.4;
+    }
+}
+
+/* ==========================================
+   LANDSCAPE PHONES
+========================================== */
+
+@media (max-width: 767px) and (orientation: landscape) {
+
+    .footer {
+        padding: 18px 15px;
+    }
+
+    .footer-title {
+        font-size: 17px;
+
+        margin-bottom: 8px;
+    }
+
+    .footer-address {
+        font-size: 14px;
+
+        margin-bottom: 8px;
+    }
+
+    .footer-phone {
+        flex-direction: row;
+
+        gap: 10px;
+
+        font-size: 14px;
+
+        margin-bottom: 8px;
+    }
+
+    .footer-whatsapp {
+        font-size: 14px;
+
+        margin-bottom: 8px;
+    }
+
+    .footer-copy {
+        font-size: 11px;
+    }
+}
+
+/* ==========================================
+   TOUCH DEVICES
+========================================== */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .footer-whatsapp a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .footer-whatsapp a:hover {
+        text-decoration: none;
+    }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .footer-whatsapp a {
+        transition: none;
+    }
+}

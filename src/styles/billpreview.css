@@ -1,0 +1,573 @@
+/* ==========================================
+   Bill Preview Container
+========================================== */
+
+.bill-preview {
+    width: 340px;
+    max-width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+    color: #000;
+    overflow-wrap: break-word;
+}
+
+/* Keep all elements inside the bill responsive */
+.bill-preview *,
+.bill-preview *::before,
+.bill-preview *::after {
+    box-sizing: border-box;
+}
+
+/* ==========================================
+   Company Details
+========================================== */
+
+.company-name {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    overflow-wrap: break-word;
+}
+
+.company-address {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 12px;
+    overflow-wrap: break-word;
+}
+
+.company-phone {
+    text-align: center;
+    margin-top: 3px;
+    font-size: 12px;
+    overflow-wrap: break-word;
+}
+
+/* ==========================================
+   Separator
+========================================== */
+
+.bill-line {
+    border-top: 1px dashed #000;
+    margin: 12px 0;
+}
+
+/* ==========================================
+   Bill Header
+========================================== */
+
+.bill-header {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.bill-header td {
+    padding: 3px 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.bill-header td:last-child {
+    text-align: right;
+    font-weight: 600;
+}
+
+/* ==========================================
+   Sender / Receiver
+========================================== */
+
+.party-box {
+    margin-top: 10px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+.party-title {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.party-box p {
+    margin: 2px 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* ==========================================
+   Article Table
+========================================== */
+
+.article-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.article-table th {
+    text-align: left;
+    padding: 5px 0;
+    border-bottom: 1px dashed #000;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.article-table td {
+    padding: 5px 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.article-table th:last-child,
+.article-table td:last-child {
+    text-align: right;
+}
+
+/* ==========================================
+   Amount Table
+========================================== */
+
+.amount-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.amount-table td {
+    padding: 4px 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.amount-table td:last-child {
+    text-align: right;
+    font-weight: 600;
+}
+
+/* ==========================================
+   Total
+========================================== */
+
+.total-row {
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.total-row td {
+    padding: 8px 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* ==========================================
+   Footer
+========================================== */
+
+.bill-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.bill-footer h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.bill-footer p {
+    font-size: 11px;
+    overflow-wrap: break-word;
+}
+
+/* ==========================================
+   QR Code
+========================================== */
+
+.qr-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.qr-box img,
+.qr-box canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ==========================================
+   Company Header
+========================================== */
+
+.company-header {
+    text-align: center;
+    margin-bottom: 15px;
+    max-width: 100%;
+}
+
+.company-logo {
+    width: 220px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.company-header h2 {
+    margin: 5px 0;
+    font-size: 20px;
+    font-weight: bold;
+    overflow-wrap: break-word;
+}
+
+.company-header p {
+    margin: 2px 0;
+    font-size: 13px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* ==========================================
+   Extra Small Phones
+   320px - 374px
+========================================== */
+
+@media (max-width: 374px) {
+
+    .bill-preview {
+        width: calc(100% - 16px);
+        max-width: 340px;
+        padding: 14px;
+        font-size: 11px;
+        border-radius: 8px;
+    }
+
+    .company-name {
+        font-size: 17px;
+    }
+
+    .company-address,
+    .company-phone {
+        font-size: 10px;
+    }
+
+    .company-header h2 {
+        font-size: 17px;
+    }
+
+    .company-header p {
+        font-size: 11px;
+    }
+
+    .company-logo {
+        width: 170px;
+        margin-bottom: 7px;
+    }
+
+    .bill-line {
+        margin: 9px 0;
+    }
+
+    .bill-header td {
+        padding: 2px 0;
+    }
+
+    .party-box {
+        margin-top: 8px;
+    }
+
+    .article-table th,
+    .article-table td {
+        padding: 4px 0;
+    }
+
+    .amount-table td {
+        padding: 3px 0;
+    }
+
+    .total-row {
+        font-size: 15px;
+    }
+
+    .total-row td {
+        padding: 6px 0;
+    }
+
+    .bill-footer {
+        margin-top: 15px;
+    }
+
+    .bill-footer h3 {
+        font-size: 15px;
+    }
+
+    .bill-footer p {
+        font-size: 9px;
+    }
+
+    .qr-box {
+        margin: 10px 0;
+    }
+}
+
+/* ==========================================
+   Small / Normal Phones
+   375px - 479px
+========================================== */
+
+@media (min-width: 375px) and (max-width: 479px) {
+
+    .bill-preview {
+        width: calc(100% - 20px);
+        max-width: 340px;
+        padding: 16px;
+        font-size: 12px;
+    }
+
+    .company-name {
+        font-size: 18px;
+    }
+
+    .company-address,
+    .company-phone {
+        font-size: 11px;
+    }
+
+    .company-header h2 {
+        font-size: 18px;
+    }
+
+    .company-header p {
+        font-size: 12px;
+    }
+
+    .company-logo {
+        width: 190px;
+    }
+
+    .total-row {
+        font-size: 16px;
+    }
+
+    .bill-footer h3 {
+        font-size: 16px;
+    }
+}
+
+/* ==========================================
+   Large Phones
+   480px - 767px
+========================================== */
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+    .bill-preview {
+        width: 340px;
+        max-width: calc(100% - 30px);
+        padding: 20px;
+    }
+
+    .company-name {
+        font-size: 20px;
+    }
+
+    .company-address,
+    .company-phone {
+        font-size: 12px;
+    }
+
+    .company-logo {
+        width: 210px;
+    }
+}
+
+/* ==========================================
+   Tablets / iPad Portrait
+   768px - 1023px
+========================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    .bill-preview {
+        width: 340px;
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .company-name {
+        font-size: 22px;
+    }
+
+    .company-logo {
+        width: 220px;
+        max-width: 90%;
+    }
+}
+
+/* ==========================================
+   iPad / Tablet Landscape
+   1024px - 1279px
+========================================== */
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+
+    .bill-preview {
+        width: 340px;
+        max-width: 90%;
+    }
+}
+
+/* ==========================================
+   Desktop
+========================================== */
+
+@media (min-width: 1280px) {
+
+    .bill-preview {
+        width: 340px;
+    }
+
+    .company-logo {
+        width: 220px;
+    }
+}
+
+/* ==========================================
+   Landscape Phones
+========================================== */
+
+@media (max-width: 767px) and (orientation: landscape) {
+
+    .bill-preview {
+        width: 340px;
+        max-width: calc(100vw - 30px);
+        padding: 16px;
+    }
+
+    .company-logo {
+        max-width: 180px;
+    }
+}
+
+/* ==========================================
+   Touch Devices
+========================================== */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .bill-preview {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    .bill-preview table {
+        max-width: 100%;
+    }
+}
+
+/* ==========================================
+   Prevent Horizontal Overflow
+========================================== */
+
+@media (max-width: 767px) {
+
+    .bill-preview {
+        overflow-x: hidden;
+    }
+
+    .bill-preview table {
+        max-width: 100%;
+    }
+
+    .bill-preview td,
+    .bill-preview th {
+        max-width: 100%;
+    }
+}
+
+/* ==========================================
+   Print Style
+========================================== */
+
+@media print {
+
+    body {
+        margin: 0;
+        background: white;
+    }
+
+    .bill-preview {
+        width: 80mm;
+        max-width: 80mm;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        padding: 5mm;
+        margin: 0 auto;
+        font-size: 13px;
+    }
+
+    .company-name {
+        font-size: 22px;
+    }
+
+    .company-address,
+    .company-phone {
+        font-size: 12px;
+    }
+
+    .company-logo {
+        width: 220px;
+        max-width: 100%;
+    }
+
+    .total-row {
+        font-size: 18px;
+    }
+}
+/* ==========================================
+   PRINT BILL DETAILS
+========================================== */
+
+.print-detail-row {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 4px 0;
+
+    font-size: 13px;
+}
+
+.print-detail-row span:first-child {
+
+    font-weight: 500;
+}
+
+.print-detail-row span:last-child {
+
+    text-align: right;
+
+    font-weight: 600;
+
+    word-break: break-word;
+}
