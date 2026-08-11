@@ -6,7 +6,7 @@ import BillPreview from "../components/BillPreview";
 
 import "../styles/createbill.css";
 
-const API = "http://127.0.0.1:8000/api";
+const API = "https://pandiselvam-transport-backend.onrender.com/api";
 
 const CreateBill = () => {
 
@@ -478,7 +478,7 @@ const CreateBill = () => {
                         name="from"
                         value={bill.from}
                         onChange={handleChange}
-                        placeholder="Enter source "
+                        placeholder="Enter source"
                     />
 
                     </div>
