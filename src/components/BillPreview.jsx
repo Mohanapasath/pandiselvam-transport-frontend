@@ -3,15 +3,96 @@ import logo from "../assets/asplogo.png";
 
 const BillPreview = ({ bill }) => {
 
+    // ==========================================
+    // NO BILL
+    // ==========================================
+
     if (!bill) {
         return null;
     }
 
+
+    // ==========================================
+    // SAFE NUMERIC VALUES
+    // ==========================================
+
+    const freight =
+        Number(bill.freight) || 0;
+
+    const loadingCharge =
+        Number(bill.loadingCharge) || 0;
+
+    const gst =
+        Number(bill.gstBox) || 0;
+
+    const netAmount =
+        Number(bill.netAmount) ||
+        (freight + loadingCharge + gst);
+
+
+    // ==========================================
+    // QUANTITY
+    // ==========================================
+
+    const quantity =
+        Number(bill.quantity) || 0;
+
+
+    // ==========================================
+    // AMOUNT OF ONE PIECE
+    //
+    // Your CreateBill uses:
+    // name="Amount"
+    // ==========================================
+
+    const amount =
+        Number(bill.Amount) || 0;
+
+
+    // ==========================================
+    // TOTAL
+    //
+    // If bill.total is available, use it.
+    // Otherwise calculate:
+    //
+    // Quantity × Amount
+    // ==========================================
+
+    const calculatedTotal =
+        quantity * amount;
+
+
+    const total =
+        Number.isFinite(Number(bill.total))
+            ? Number(bill.total)
+            : calculatedTotal;
+
+
+    // ==========================================
+    // PAYMENT STATUS
+    //
+    // IMPORTANT:
+    //
+    // amountPaid is now TEXT.
+    //
+    // Possible values:
+    // "Paid"
+    // "To Pay"
+    //
+    // DO NOT use Number() here.
+    // ==========================================
+
+    const paymentStatus =
+        bill.amountPaid || "-";
+
+
     return (
+
         <div
             id="bill-preview"
             className="bill-preview"
         >
+
 
             {/* ===============================
                 COMPANY HEADER
@@ -25,17 +106,24 @@ const BillPreview = ({ bill }) => {
                     className="company-logo"
                 />
 
-                <h2>PANDISELVAM TRANSPORT</h2>
+
+                <h2>
+                    PANDISELVAM TRANSPORT
+                </h2>
+
 
                 <p>
-                    3/6D, Indra Nagar, Anaikuttam, Sivakasi-626130.
+                    3/6D, Indra Nagar, Anaikuttam,
+                    Sivakasi-626130.
                 </p>
 
+
                 <p>
-                    +91 9585399747 / +91 6369386260
+                    +91 8531044620 / +91 6369386260 / +91 8610809156
                 </p>
 
             </div>
+
 
             <hr />
 
@@ -48,71 +136,100 @@ const BillPreview = ({ bill }) => {
 
                 <tbody>
 
+
+                    {/* LR NUMBER */}
+
                     <tr>
+
                         <td>
-                            <strong>LR No</strong>
+                            <strong>
+                                LR No
+                            </strong>
                         </td>
 
                         <td>
-                            {bill.lrNo}
+                            {bill.lrNo || "-"}
                         </td>
+
                     </tr>
 
 
+                    {/* DATE */}
+
                     <tr>
+
                         <td>
-                            <strong>Date</strong>
+                            <strong>
+                                Date
+                            </strong>
                         </td>
 
                         <td>
-                            {bill.date}
+                            {bill.date || "-"}
                         </td>
+
                     </tr>
 
 
+                    {/* VEHICLE NUMBER */}
+
                     <tr>
+
                         <td>
-                            <strong>Vehicle No</strong>
+                            <strong>
+                                Vehicle No
+                            </strong>
                         </td>
 
                         <td>
-                            {bill.vehicleNo}
+                            {bill.vehicleNo || "-"}
                         </td>
+
                     </tr>
 
 
                     {/* ===============================
                         GST
-                    =============================== */}
+                    =============================== 
 
                     <tr>
+
                         <td>
-                            <strong>GST</strong>
+                            <strong>
+                                GST
+                            </strong>
                         </td>
 
                         <td>
-                             {Number(bill.gstBox || 0).toFixed(2)}
+                            {gst.toFixed(2)}
                         </td>
+
                     </tr>
-
+*/}
 
                     {/* ===============================
                         ATTENDER MAN
                     =============================== */}
 
                     <tr>
+
                         <td>
-                            <strong>Attender Man</strong>
+                            <strong>
+                                Attender Man
+                            </strong>
                         </td>
 
                         <td>
                             {bill.attenderMan || "-"}
                         </td>
+
                     </tr>
+
 
                 </tbody>
 
             </table>
+
 
             <hr />
 
@@ -125,30 +242,45 @@ const BillPreview = ({ bill }) => {
 
                 <tbody>
 
+
+                    {/* FROM */}
+
                     <tr>
+
                         <td>
-                            <strong>From</strong>
+                            <strong>
+                                From
+                            </strong>
                         </td>
 
                         <td>
-                            {bill.from}
+                            {bill.from || "-"}
                         </td>
+
                     </tr>
 
 
+                    {/* TO */}
+
                     <tr>
+
                         <td>
-                            <strong>To</strong>
+                            <strong>
+                                To
+                            </strong>
                         </td>
 
                         <td>
-                            {bill.to}
+                            {bill.to || "-"}
                         </td>
+
                     </tr>
+
 
                 </tbody>
 
             </table>
+
 
             <hr />
 
@@ -163,9 +295,13 @@ const BillPreview = ({ bill }) => {
                     Sender Details
                 </h3>
 
+
                 <table className="bill-table">
 
                     <tbody>
+
+
+                        {/* NAME */}
 
                         <tr>
 
@@ -174,11 +310,13 @@ const BillPreview = ({ bill }) => {
                             </td>
 
                             <td>
-                                {bill.senderName}
+                                {bill.senderName || "-"}
                             </td>
 
                         </tr>
 
+
+                        {/* CONTACT */}
 
                         <tr>
 
@@ -187,16 +325,18 @@ const BillPreview = ({ bill }) => {
                             </td>
 
                             <td>
-                                {bill.senderContact}
+                                {bill.senderContact || "-"}
                             </td>
 
                         </tr>
+
 
                     </tbody>
 
                 </table>
 
             </div>
+
 
             <hr />
 
@@ -211,9 +351,13 @@ const BillPreview = ({ bill }) => {
                     Receiver Details
                 </h3>
 
+
                 <table className="bill-table">
 
                     <tbody>
+
+
+                        {/* NAME */}
 
                         <tr>
 
@@ -222,11 +366,13 @@ const BillPreview = ({ bill }) => {
                             </td>
 
                             <td>
-                                {bill.receiverName}
+                                {bill.receiverName || "-"}
                             </td>
 
                         </tr>
 
+
+                        {/* CONTACT */}
 
                         <tr>
 
@@ -235,16 +381,18 @@ const BillPreview = ({ bill }) => {
                             </td>
 
                             <td>
-                                {bill.receiverContact}
+                                {bill.receiverContact || "-"}
                             </td>
 
                         </tr>
+
 
                     </tbody>
 
                 </table>
 
             </div>
+
 
             <hr />
 
@@ -277,11 +425,11 @@ const BillPreview = ({ bill }) => {
                     <tr>
 
                         <td>
-                            {bill.articleName}
+                            {bill.articleName || "-"}
                         </td>
 
                         <td>
-                            {bill.quantity}
+                            {quantity}
                         </td>
 
                     </tr>
@@ -289,6 +437,7 @@ const BillPreview = ({ bill }) => {
                 </tbody>
 
             </table>
+
 
             <hr />
 
@@ -296,107 +445,155 @@ const BillPreview = ({ bill }) => {
             {/* ===============================
                 AMOUNT DETAILS
             =============================== */}
+{/* ===============================
+    AMOUNT DETAILS
+=============================== */}
 
-            <table className="bill-table amount-table">
+<table className="bill-table amount-table">
 
-                <tbody>
+    <tbody>
 
-                    {/* FREIGHT */}
+        {/* ===============================
+            AMOUNT / PIECE
+        =============================== */}
 
-                    <tr>
+        <tr>
 
-                        <td>
-                            Freight
-                        </td>
+            <td>
+                Amount / Piece
+            </td>
 
-                        <td className="text-right">
-                            ₹ {Number(bill.freight || 0).toFixed(2)}
-                        </td>
+            <td className="text-right">
+                ₹ {amount.toFixed(2)}
+            </td>
 
-                    </tr>
-
-
-                    {/* LOADING CHARGE */}
-
-                    <tr>
-
-                        <td>
-                            Loading Charge
-                        </td>
-
-                        <td className="text-right">
-                            ₹ {Number(bill.loadingCharge || 0).toFixed(2)}
-                        </td>
-
-                    </tr>
+        </tr>
 
 
-                    {/* GST */}
+        {/* ===============================
+            FREIGHT - HIDDEN
+        =============================== */}
 
-                    <tr>
+        {/*
+        <tr>
 
-                        <td>
-                            GST
-                        </td>
+            <td>
+                Freight
+            </td>
 
-                        <td className="text-right">
-                            ₹ {Number(bill.gstBox || 0).toFixed(2)}
-                        </td>
+            <td className="text-right">
+                ₹ {freight.toFixed(2)}
+            </td>
 
-                    </tr>
-
-
-                    {/* NET AMOUNT */}
-
-                    <tr>
-
-                        <td>
-                            Net Amount
-                        </td>
-
-                        <td className="text-right">
-                            ₹ {Number(bill.netAmount || 0).toFixed(2)}
-                        </td>
-
-                    </tr>
+        </tr>
+        */}
 
 
-                    {/* AMOUNT PAID */}
+        {/* ===============================
+            LOADING CHARGE - HIDDEN
+        =============================== */}
 
-                    <tr>
+        {/*
+        <tr>
 
-                        <td>
-                            Amount Paid
-                        </td>
+            <td>
+                Loading Charge
+            </td>
 
-                        <td className="text-right">
-                            ₹ {Number(bill.amountPaid || 0).toFixed(2)}
-                        </td>
+            <td className="text-right">
+                ₹ {loadingCharge.toFixed(2)}
+            </td>
 
-                    </tr>
+        </tr>
+        */}
 
 
-                    {/* TOTAL */}
+        {/* ===============================
+            GST - HIDDEN
+        =============================== */}
 
-                    <tr className="total-row">
+        {/*
+        <tr>
 
-                        <td>
-                            <strong>Total</strong>
-                        </td>
+            <td>
+                GST
+            </td>
 
-                        <td className="text-right">
+            <td className="text-right">
+                ₹ {gst.toFixed(2)}
+            </td>
 
-                            <strong>
-                                ₹ {Number(bill.total || 0).toFixed(2)}
-                            </strong>
+        </tr>
+        */}
 
-                        </td>
 
-                    </tr>
+        {/* ===============================
+            NET AMOUNT - HIDDEN
+        =============================== */}
 
-                </tbody>
+        {/*
+        <tr>
 
-            </table>
+            <td>
+                Net Amount
+            </td>
+
+            <td className="text-right">
+                ₹ {netAmount.toFixed(2)}
+            </td>
+
+        </tr>
+        */}
+
+
+        {/* ===============================
+            PAYMENT STATUS
+        =============================== */}
+
+        <tr>
+
+            <td>
+                <strong>
+                    Payment Status
+                </strong>
+            </td>
+
+            <td className="text-right">
+
+                <strong>
+                    {paymentStatus}
+                </strong>
+
+            </td>
+
+        </tr>
+
+
+        {/* ===============================
+            TOTAL
+        =============================== */}
+
+        <tr className="total-row">
+
+            <td>
+                <strong>
+                    Total
+                </strong>
+            </td>
+
+            <td className="text-right">
+
+                <strong>
+                    ₹ {total.toFixed(2)}
+                </strong>
+
+            </td>
+
+        </tr>
+
+    </tbody>
+
+</table>
 
             <hr />
 
@@ -408,20 +605,26 @@ const BillPreview = ({ bill }) => {
             <div className="footer">
 
                 <p>
-                    Goods Accepted Subject To Company's Rules & Regulations.
+                    Goods Accepted Subject To
+                    Company's Rules & Regulations.
                 </p>
 
+
                 <br />
+
 
                 <h3>
                     THANK YOU
                 </h3>
 
+
                 <p>
                     Visit Again
                 </p>
 
+
                 <br />
+
 
                 <small>
                     Computer Generated Bill
@@ -429,8 +632,12 @@ const BillPreview = ({ bill }) => {
 
             </div>
 
+
         </div>
+
     );
+
 };
+
 
 export default BillPreview;
