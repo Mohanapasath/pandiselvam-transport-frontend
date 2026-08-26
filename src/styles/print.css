@@ -1,3 +1,8 @@
+/* ==========================================
+   THERMAL RECEIPT PRINT - 58MM
+   PANDISELVAM TRANSPORT
+========================================== */
+
 @page {
     size: 58mm auto;
     margin: 0;
@@ -8,103 +13,205 @@
     html,
     body {
         width: 58mm !important;
+        min-width: 58mm !important;
+        max-width: 58mm !important;
+
         margin: 0 !important;
         padding: 0 !important;
+
         background: #fff !important;
     }
 
-    body * {
-        visibility: hidden;
+    body {
+        overflow: visible !important;
     }
 
+    /* Hide complete website */
+    body * {
+        visibility: hidden !important;
+    }
+
+    /* Show only receipt */
     #print-area,
     #print-area * {
-        visibility: visible;
+        visibility: visible !important;
     }
 
-    #print-area {
-        position: absolute;
-        top: 0;
-        left: 0;
+    /* ==========================================
+       PRINT AREA
+       58mm paper
+       Approx. 48mm printable area
+    ========================================== */
 
-        width: 58mm !important;
+    #print-area {
+        position: absolute !important;
+
+        top: 0 !important;
+        left: 50% !important;
+
+        transform: translateX(-50%) !important;
+
+        width: 48mm !important;
+        min-width: 48mm !important;
+        max-width: 48mm !important;
+
         margin: 0 !important;
         padding: 0 !important;
 
-        box-sizing: border-box;
+        background: #fff !important;
+
+        box-sizing: border-box !important;
     }
 
+    /* ==========================================
+       BILL
+    ========================================== */
+
     .bill-preview {
-        width: 54mm !important;
-        max-width: 54mm !important;
+        width: 48mm !important;
+        min-width: 48mm !important;
+        max-width: 48mm !important;
 
         margin: 0 auto !important;
-        padding: 0 !important;
+        padding: 1mm !important;
+
+        box-sizing: border-box !important;
 
         border: none !important;
-        box-sizing: border-box;
+
+        background: #fff !important;
 
         page-break-before: avoid !important;
         page-break-after: avoid !important;
         page-break-inside: avoid !important;
+
+        break-before: avoid !important;
+        break-after: avoid !important;
         break-inside: avoid !important;
+
+        overflow: visible !important;
     }
+
+    /* ==========================================
+       LOGO
+    ========================================== */
 
     .company-logo {
         display: block !important;
 
         width: 30mm !important;
         max-width: 30mm !important;
+
         height: auto !important;
 
         margin: 0 auto 2mm auto !important;
     }
 
-    table {
+    /* ==========================================
+       ALL TEXT
+    ========================================== */
+
+    #print-area,
+    #print-area p,
+    #print-area span,
+    #print-area div,
+    #print-area td,
+    #print-area th,
+    #print-area label {
+
+        color: #000 !important;
+
+        font-size: 12px !important;
+
+        font-weight: 700 !important;
+
+        line-height: 1.3 !important;
+    }
+
+    /* ==========================================
+       HEADINGS
+    ========================================== */
+
+    #print-area h1,
+    #print-area h2,
+    #print-area h3,
+    #print-area h4,
+    #print-area h5,
+    #print-area h6 {
+
+        color: #000 !important;
+
+        font-weight: 900 !important;
+
+        margin: 1mm 0 !important;
+
+        line-height: 1.2 !important;
+    }
+
+    /* ==========================================
+       TABLE
+    ========================================== */
+
+    #print-area table {
+
         width: 100% !important;
+
+        min-width: 100% !important;
+
         max-width: 100% !important;
 
-        margin: 0 !important;
-        padding: 0 !important;
-
         border-collapse: collapse !important;
+
         table-layout: fixed !important;
+
+        margin: 0 !important;
     }
 
-    th,
-    td {
-        padding: 0.8mm 0 !important;
+    #print-area td,
+    #print-area th {
+
+        padding: 1mm !important;
 
         font-size: 11px !important;
+
         font-weight: 700 !important;
 
-        line-height: 1.15 !important;
+        line-height: 1.25 !important;
 
-        word-break: break-word;
-        overflow-wrap: break-word;
+        color: #000 !important;
+
+        word-break: break-word !important;
+
+        overflow-wrap: break-word !important;
+
+        vertical-align: top !important;
     }
 
-    p {
-        margin: 0.8mm 0 !important;
-        padding: 0 !important;
+    /* ==========================================
+       PARAGRAPH
+    ========================================== */
 
-        font-size: 11px !important;
-        font-weight: 700 !important;
-        line-height: 1.15 !important;
-    }
+    #print-area p {
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
         margin: 1mm 0 !important;
-        padding: 0 !important;
 
-        font-weight: 700 !important;
-        line-height: 1.15 !important;
+        padding: 0 !important;
     }
+
+    /* ==========================================
+       CENTER
+    ========================================== */
+
+    #print-area .text-center,
+    #print-area .center,
+    #print-area .company-header {
+
+        text-align: center !important;
+    }
+
+    /* ==========================================
+       HIDE WEBSITE UI
+    ========================================== */
 
     .button-group,
     .page-title,
@@ -113,21 +220,51 @@
     input,
     select,
     textarea {
+
         display: none !important;
     }
 
-    img {
+    /* ==========================================
+       IMAGES
+    ========================================== */
+
+    #print-area img {
+
         max-width: 100% !important;
+
         height: auto !important;
     }
 
-    a {
+    /* ==========================================
+       LINKS
+    ========================================== */
+
+    #print-area a {
+
         color: #000 !important;
+
         text-decoration: none !important;
     }
 
+    /* ==========================================
+       REMOVE PAGE BREAK
+    ========================================== */
+
+    #print-area,
+    .bill-preview {
+
+        page-break-before: avoid !important;
+        page-break-after: avoid !important;
+    }
+
+    /* ==========================================
+       BLACK PRINT
+    ========================================== */
+
     * {
+
         -webkit-print-color-adjust: exact !important;
+
         print-color-adjust: exact !important;
     }
 }
