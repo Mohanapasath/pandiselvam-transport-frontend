@@ -603,8 +603,8 @@ const BillPreview = ({ bill }) => {
             =============================== */}
 
             <div className="footer">
-
-                <p>
+{/*}
+               <p>
                     Goods Accepted Subject To
                     Company's Rules & Regulations.
                 </p>
@@ -629,7 +629,7 @@ const BillPreview = ({ bill }) => {
                 <small>
                     Computer Generated Bill
                 </small>
-
+*/}
             </div>
 
 

@@ -1,112 +1,267 @@
 /* ==========================================
-   PRINT STYLE
+   THERMAL RECEIPT PRINT - 58MM
+   SEZNIK / POS58
 ========================================== */
 
 @page {
-
-    
-    size: 80mm auto;
-
+    size: 58mm auto;
     margin: 0;
-
 }
 
 @media print {
 
+    /* -----------------------------
+       PAGE / BODY
+    ----------------------------- */
+
     html,
     body {
+        width: 58mm;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
 
-        margin: 0;
-
-        padding: 0;
-
-        width: 80mm;
-
-        background: white;
-
+        color: #000000 !important;
+        font-weight: 700 !important;
     }
+
+    body {
+        overflow: visible !important;
+    }
+
+
+    /* -----------------------------
+       HIDE EVERYTHING
+    ----------------------------- */
 
     body * {
-
         visibility: hidden;
-
     }
+
+
+    /* -----------------------------
+       SHOW ONLY BILL
+    ----------------------------- */
 
     #print-area,
     #print-area * {
-
         visibility: visible;
-
     }
+
+
+    /* -----------------------------
+       PRINT AREA
+       Paper = 58mm
+       Printable area ≈ 48mm
+    ----------------------------- */
 
     #print-area {
-
         position: absolute;
-
         top: 0;
-
         left: 0;
 
-        width: 50%;
-
-        padding: 0;
+        width: 48mm;
 
         margin: 0;
-
-    }
-
-    .bill-preview {
-
-        width: 100%;
-
-        max-width: 700px;
-
-        margin: auto;
-
-        border: 1px solid black;
-
-        padding: 15px;
+        padding: 0;
 
         box-sizing: border-box;
 
+        background: #ffffff;
+
+        color: #000000 !important;
+        font-weight: 700 !important;
+    }
+
+
+    /* -----------------------------
+       BILL
+    ----------------------------- */
+
+    .bill-preview {
+        width: 48mm;
+        max-width: 48mm;
+
+        margin: 0;
+        padding: 2mm;
+
+        box-sizing: border-box;
+
+        border: none !important;
+
         page-break-inside: avoid;
+        break-inside: avoid;
 
+        overflow: visible;
+
+        color: #000000 !important;
+        font-weight: 700 !important;
     }
 
-    .button-group,
 
-    .page-title,
+    /* -----------------------------
+       MAKE ALL TEXT BOLD + BLACK
+    ----------------------------- */
 
-    .bill-form {
-
-        display: none !important;
-
+    #print-area,
+    #print-area *,
+    .bill-preview,
+    .bill-preview * {
+        color: #000000 !important;
+        font-weight: 700 !important;
     }
+
+
+    /* -----------------------------
+       LOGO
+    ----------------------------- */
+
+    .company-logo {
+        display: block;
+
+        width: 35mm !important;
+        max-width: 35mm !important;
+        height: auto !important;
+
+        margin: 0 auto 2mm !important;
+    }
+
+
+    /* -----------------------------
+       TABLE
+    ----------------------------- */
 
     table {
-
-        width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
 
         border-collapse: collapse;
 
+        table-layout: fixed;
+
+        color: #000000 !important;
+        font-weight: 700 !important;
     }
+
+
+    /* -----------------------------
+       TABLE CELLS
+    ----------------------------- */
 
     td,
     th {
+        padding: 1mm;
 
-        padding: 4px;
+        font-size: 10px;
 
-        font-size: 13px;
+        line-height: 1.25;
 
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+
+        color: #000000 !important;
+        font-weight: 700 !important;
     }
 
-}
-.company-logo{
 
-    width:180px !important;
+    /* -----------------------------
+       TEXT
+    ----------------------------- */
 
-    display:block;
+    p {
+        margin: 1mm 0;
 
-    margin:0 auto 10px;
+        color: #000000 !important;
+        font-weight: 700 !important;
+    }
 
+
+    /* -----------------------------
+       HEADINGS
+    ----------------------------- */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 1mm 0;
+
+        line-height: 1.2;
+
+        color: #000000 !important;
+        font-weight: 700 !important;
+    }
+
+
+    /* -----------------------------
+       SPAN / DIV / LABEL
+    ----------------------------- */
+
+    span,
+    div,
+    label,
+    strong,
+    b {
+        color: #000000 !important;
+        font-weight: 700 !important;
+    }
+
+
+    /* -----------------------------
+       HIDE UI ELEMENTS
+    ----------------------------- */
+
+    .button-group,
+    .page-title,
+    .bill-form,
+    button,
+    input,
+    select,
+    textarea {
+        display: none !important;
+    }
+
+
+    /* -----------------------------
+       REMOVE UNNECESSARY PAGE BREAKS
+    ----------------------------- */
+
+    #print-area,
+    .bill-preview {
+        page-break-before: avoid !important;
+        page-break-after: avoid !important;
+    }
+
+
+    /* -----------------------------
+       IMAGES
+    ----------------------------- */
+
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+
+    /* -----------------------------
+       LINKS
+    ----------------------------- */
+
+    a {
+        color: #000000 !important;
+        text-decoration: none !important;
+        font-weight: 700 !important;
+    }
+
+
+    /* -----------------------------
+       PRINT COLORS
+    ----------------------------- */
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
 }
