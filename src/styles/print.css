@@ -1,56 +1,46 @@
 /* =========================================================
-   BILL PREVIEW - SCREEN
+   BILL PREVIEW - NORMAL SCREEN
 ========================================================= */
 
 .bill-preview {
     width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
     box-sizing: border-box;
 }
 
 
 /* =========================================================
-   THERMAL PRINTER - 58MM
-   Mobile / Android / Mharmal / Thermal Printer
+   THERMAL PRINT - 58MM
 ========================================================= */
-
-@page {
-    size: 58mm auto;
-    margin: 0;
-}
 
 @media print {
 
-    /* =====================================================
-       PAGE
-    ===================================================== */
+    @page {
+        size: 58mm auto;
+        margin: 0;
+    }
 
     html,
     body {
         width: 58mm !important;
-        min-width: 58mm !important;
-        max-width: 58mm !important;
-
         margin: 0 !important;
         padding: 0 !important;
+        background: #fff !important;
+    }
 
-        background: #ffffff !important;
-
+    body {
         overflow: visible !important;
     }
 
 
-    /* =====================================================
-       HIDE EVERYTHING
-    ===================================================== */
+    /* -----------------------------------------------------
+       HIDE EVERYTHING EXCEPT BILL
+    ----------------------------------------------------- */
 
     body * {
         visibility: hidden !important;
     }
-
-
-    /* =====================================================
-       SHOW BILL ONLY
-    ===================================================== */
 
     #print-area,
     #print-area * {
@@ -58,66 +48,54 @@
     }
 
 
-    /* =====================================================
+    /* -----------------------------------------------------
        PRINT AREA
-
-       58mm paper
-       Keep small side margin
-       Maximum usable width
-    ===================================================== */
+    ----------------------------------------------------- */
 
     #print-area {
-
         position: absolute !important;
 
         top: 0 !important;
         left: 0 !important;
 
         width: 58mm !important;
-        min-width: 58mm !important;
-        max-width: 58mm !important;
 
         margin: 0 !important;
         padding: 0 !important;
 
         box-sizing: border-box !important;
 
-        background: #ffffff !important;
+        background: #fff !important;
 
         height: auto !important;
         min-height: 0 !important;
+        max-height: none !important;
 
         overflow: visible !important;
-
-        display: block !important;
     }
 
 
-    /* =====================================================
-       BILL CONTAINER
-
-       IMPORTANT:
-       No fixed height
-       No large margin
-       No large padding
-       No flex spacing
-    ===================================================== */
+    /* -----------------------------------------------------
+       BILL
+    ----------------------------------------------------- */
 
     #print-area .bill-preview {
 
-        width: 56mm !important;
-        min-width: 56mm !important;
-        max-width: 56mm !important;
+        width: 58mm !important;
+        max-width: 58mm !important;
 
-        margin: 0 auto !important;
+        margin: 0 !important;
 
-        padding: 1.5mm !important;
+        /*
+         * Small side padding.
+         * Actual printable area of many 58mm printers
+         * is around 48-50mm.
+         */
+        padding: 2mm 3mm !important;
 
         box-sizing: border-box !important;
 
         border: none !important;
-
-        background: #ffffff !important;
 
         height: auto !important;
         min-height: 0 !important;
@@ -125,12 +103,8 @@
 
         overflow: visible !important;
 
-        display: block !important;
-
-        position: relative !important;
-
-        page-break-before: avoid !important;
-        page-break-after: avoid !important;
+        page-break-before: auto !important;
+        page-break-after: auto !important;
         page-break-inside: auto !important;
 
         break-before: auto !important;
@@ -139,65 +113,24 @@
     }
 
 
-    /* =====================================================
-       REMOVE FLEX SPACING
+    /* -----------------------------------------------------
+       REMOVE LARGE SPACING
+    ----------------------------------------------------- */
 
-       This is VERY IMPORTANT for your problem.
-    ===================================================== */
-
-    #print-area .bill-preview,
-    #print-area .bill-preview > div,
-    #print-area .bill-preview section {
-
-        justify-content: flex-start !important;
-
-        align-content: flex-start !important;
-
-        align-items: flex-start !important;
-    }
-
-
-    /* =====================================================
-       REMOVE LARGE GAPS
-    ===================================================== */
-
-    #print-area .bill-preview > * {
-
-        margin-top: 0 !important;
-        margin-bottom: 1.5mm !important;
-
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-
-        gap: 0 !important;
-
-        height: auto !important;
-        min-height: 0 !important;
-
-        max-height: none !important;
-    }
-
-
-    /* =====================================================
-       ALL DIV / SECTION SPACING
-    ===================================================== */
-
-    #print-area div,
-    #print-area section,
-    #print-area article {
+    #print-area * {
 
         box-sizing: border-box !important;
 
-        height: auto !important;
-        min-height: 0 !important;
-
         max-height: none !important;
     }
 
 
-    /* =====================================================
-       HEADINGS
-    ===================================================== */
+    #print-area p {
+
+        margin-top: 1mm !important;
+        margin-bottom: 1mm !important;
+    }
+
 
     #print-area h1,
     #print-area h2,
@@ -206,107 +139,49 @@
     #print-area h5,
     #print-area h6 {
 
-        margin: 1mm 0 !important;
-
-        padding: 0 !important;
+        margin-top: 1mm !important;
+        margin-bottom: 1mm !important;
 
         line-height: 1.15 !important;
-
-        height: auto !important;
-        min-height: 0 !important;
     }
 
 
-    /* =====================================================
-       NORMAL TEXT
-    ===================================================== */
-
-    #print-area p {
-
-        margin: 0.8mm 0 !important;
-
-        padding: 0 !important;
-
-        line-height: 1.15 !important;
-
-        height: auto !important;
-        min-height: 0 !important;
-    }
-
-
-    /* =====================================================
-       LABEL / VALUE TEXT
-    ===================================================== */
-
-    #print-area span,
-    #print-area label {
-
-        line-height: 1.15 !important;
-
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-    }
-
-
-    /* =====================================================
+    /* -----------------------------------------------------
        TABLE
-
-       FULL AVAILABLE WIDTH
-    ===================================================== */
+    ----------------------------------------------------- */
 
     #print-area table {
 
         width: 100% !important;
-
-        min-width: 100% !important;
-
         max-width: 100% !important;
 
-        margin: 0 0 1mm 0 !important;
-
+        margin: 0 !important;
         padding: 0 !important;
 
         border-collapse: collapse !important;
-
         border-spacing: 0 !important;
 
         table-layout: fixed !important;
-
-        height: auto !important;
-
-        page-break-inside: auto !important;
     }
 
-
-    /* =====================================================
-       TABLE ROW
-    ===================================================== */
 
     #print-area tr {
 
         height: auto !important;
 
-        min-height: 0 !important;
-
         page-break-inside: avoid !important;
+        break-inside: avoid !important;
     }
 
 
-    /* =====================================================
-       TABLE CELLS
+    #print-area td,
+    #print-area th {
 
-       11px = good starting size for 58mm
-    ===================================================== */
-
-    #print-area th,
-    #print-area td {
-
-        padding: 1mm 0.8mm !important;
+        padding: 1mm 0.5mm !important;
 
         margin: 0 !important;
+
+        font-family: Arial, sans-serif !important;
 
         font-size: 11px !important;
 
@@ -314,102 +189,82 @@
 
         line-height: 1.15 !important;
 
-        color: #000000 !important;
-
-        vertical-align: middle !important;
+        vertical-align: top !important;
 
         word-break: break-word !important;
 
         overflow-wrap: break-word !important;
-
-        white-space: normal !important;
-
-        height: auto !important;
-
-        min-height: 0 !important;
     }
 
 
-    /* =====================================================
-       STRONG / BOLD
+    /* -----------------------------------------------------
+       NORMAL TEXT
+    ----------------------------------------------------- */
 
-       Thermal printer needs stronger black
-    ===================================================== */
+    #print-area {
 
-    #print-area strong,
-    #print-area b {
+        font-family: Arial, sans-serif !important;
 
-        font-weight: 900 !important;
+        font-size: 11px !important;
 
-        color: #000000 !important;
+        font-weight: 700 !important;
+
+        line-height: 1.15 !important;
+
+        color: #000 !important;
     }
 
 
-    /* =====================================================
-       COMPANY HEADER
-    ===================================================== */
+    #print-area span,
+    #print-area div,
+    #print-area label {
+
+        font-size: inherit !important;
+
+        line-height: inherit !important;
+
+        color: #000 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       LOGO
+    ----------------------------------------------------- */
 
     #print-area .company-logo {
 
         display: block !important;
 
-        width: 30mm !important;
+        width: 28mm !important;
 
-        max-width: 30mm !important;
+        max-width: 28mm !important;
 
         height: auto !important;
 
         margin: 0 auto 1.5mm auto !important;
-
-        padding: 0 !important;
     }
 
 
-    /* =====================================================
-       CENTER HEADER CONTENT
-    ===================================================== */
+    /* -----------------------------------------------------
+       REMOVE UI
+    ----------------------------------------------------- */
 
-    #print-area .company-header,
-    #print-area .header,
-    #print-area .bill-header {
+    .button-group,
+    .page-title,
+    .bill-form,
+    button,
+    input,
+    select,
+    textarea,
+    .no-print {
 
-        width: 100% !important;
-
-        text-align: center !important;
-
-        margin: 0 !important;
-
-        padding: 0 !important;
-
-        height: auto !important;
-
-        min-height: 0 !important;
+        display: none !important;
     }
 
 
-    /* =====================================================
-       HORIZONTAL LINES
-    ===================================================== */
-
-    #print-area hr {
-
-        width: 100% !important;
-
-        margin: 1mm 0 !important;
-
-        padding: 0 !important;
-
-        border: 0 !important;
-
-        border-top: 1px solid #000000 !important;
-
-        height: 0 !important;
-    }
-
-
-    /* =====================================================
+    /* -----------------------------------------------------
        IMAGES
-    ===================================================== */
+    ----------------------------------------------------- */
 
     #print-area img {
 
@@ -419,109 +274,26 @@
     }
 
 
-    /* =====================================================
-       REMOVE SCREEN UI
-    ===================================================== */
-
-    .button-group,
-    .page-title,
-    .bill-form,
-    button,
-    input,
-    select,
-    textarea {
-
-        display: none !important;
-    }
-
-
-    /* =====================================================
+    /* -----------------------------------------------------
        LINKS
-    ===================================================== */
+    ----------------------------------------------------- */
 
     #print-area a {
 
-        color: #000000 !important;
+        color: #000 !important;
 
         text-decoration: none !important;
     }
 
 
-    /* =====================================================
-       REMOVE COMMON LARGE SPACING CLASSES
-    ===================================================== */
-
-    #print-area .mt-1,
-    #print-area .mt-2,
-    #print-area .mt-3,
-    #print-area .mt-4,
-    #print-area .mt-5,
-    #print-area .mb-1,
-    #print-area .mb-2,
-    #print-area .mb-3,
-    #print-area .mb-4,
-    #print-area .mb-5 {
-
-        margin-top: 0 !important;
-
-        margin-bottom: 1mm !important;
-    }
-
-
-    /* =====================================================
-       FLEX / GRID RESET
-
-       Prevent large empty spaces
-    ===================================================== */
-
-    #print-area .flex {
-
-        gap: 0 !important;
-    }
-
-    #print-area .grid {
-
-        gap: 0 !important;
-    }
-
-
-    /* =====================================================
-       REMOVE FIXED HEIGHTS
-
-       Very important for thermal paper.
-    ===================================================== */
-
-    #print-area [style*="height"],
-    #print-area [style*="min-height"] {
-
-        min-height: 0 !important;
-
-        height: auto !important;
-
-        max-height: none !important;
-    }
-
-
-    /* =====================================================
-       COLORS
-    ===================================================== */
+    /* -----------------------------------------------------
+       PRINT COLOR
+    ----------------------------------------------------- */
 
     * {
 
         -webkit-print-color-adjust: exact !important;
 
         print-color-adjust: exact !important;
-    }
-
-
-    /* =====================================================
-       FINAL BILL SPACING
-    ===================================================== */
-
-    #print-area .bill-preview > :last-child {
-
-        margin-bottom: 0 !important;
-
-        padding-bottom: 0 !important;
     }
 }
